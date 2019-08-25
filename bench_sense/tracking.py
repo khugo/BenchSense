@@ -1,6 +1,7 @@
 import asyncio
 import gspread_asyncio
 import datetime
+import pytz
 from oauth2client.service_account import ServiceAccountCredentials
 
 import bench_sense.config as config
@@ -9,13 +10,13 @@ from bench_sense.logger import logger
 
 async def start_session():
     logger.info("Writing session start event")
-    now = datetime.datetime.now()
+    now = datetime.datetime.now(pytz.timezone(config.TIMEZONE))
     await insert_row(now, "start")
 
 
 async def end_session():
     logger.info("Writing session stop event")
-    now = datetime.datetime.now()
+    now = datetime.datetime.now(pytz.timezone(config.TIMEZONE))
     await insert_row(now, "stop")
 
 
