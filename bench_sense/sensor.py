@@ -1,8 +1,8 @@
 import RPi.GPIO as GPIO
 import asyncio
 
-import bench_sense.config as config
-from bench_sense.logger import logger
+import config
+from logger import logger
 
 INPUT_PIN = 4
 SITTING_THRESHOLD = 100
