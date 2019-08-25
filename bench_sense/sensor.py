@@ -29,13 +29,13 @@ async def sense(on_sit_down, on_get_up):
             threshold = config.GET_UP_WAIT_TIME_SECONDS * 100
             # If it's been long enough since the pin has gone high, we are not sitting
             if tick >= threshold and sitting_down:
-                logger.info(f"Time since last pressure exceeded threshold, user is not sitting anymore")
+                logger.info("Time since last pressure exceeded threshold, user is not sitting anymore")
                 asyncio.create_task(on_get_up())
                 sitting_down = False
         # If it took short enough of a time for the pin to go high, we are applying enough pressure to count
         # as sitting
         if tick < SITTING_THRESHOLD and not sitting_down:
-            logger.info(f"Enough pressure applied to sensor, user is sitting")
+            logger.info("Enough pressure applied to sensor, user is sitting")
             asyncio.create_task(on_sit_down())
             sitting_down = True
 
