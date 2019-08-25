@@ -3,6 +3,7 @@ import asyncio
 
 
 async def main():
+    print("Starting to sense the bench")
     try:
         await sense(on_sit_down, on_get_up)
     except KeyboardInterrupt:
@@ -13,12 +14,9 @@ async def main():
 
 def on_sit_down():
     print("Sit down")
-    pass
-
-
-last_session_start_time = None
 
 
 def on_get_up():
-    print("Stand down")
-    pass
+    print("Get up")
+
+asyncio.run(main())
