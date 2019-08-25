@@ -1,22 +1,18 @@
 from sensor import sense, cleanup
 import asyncio
 
+from logger import logger
+from tracking import start_session, end_session
+
 
 async def main():
-    print("Starting to sense the bench")
-    try:
-        await sense(on_sit_down, on_get_up)
-    except KeyboardInterrupt:
-        pass
-    finally:
-        cleanup()
+    logger.info("Starting to sense the bench")
+    await sense(start_session, end_session)
 
 
-def on_sit_down():
-    print("Sit down")
-
-
-def on_get_up():
-    print("Get up")
-
-asyncio.run(main())
+try:
+    asyncio.run(main())
+except KeyboardInterrupt:
+    logger.info("Interrupted, exiting")
+finally:
+    cleanup()
