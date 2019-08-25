@@ -10,7 +10,7 @@ python = "^3.5"
 gspread = "^3.1"
 gspread_asyncio = "^1.0"
 oauth2client = "^4.1"
-pytz = "^2019.2"
+arrow = "^0.14.5"
 
 [tool.poetry.dev-dependencies]
 autopep8 = "^1.4"

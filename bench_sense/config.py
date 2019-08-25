@@ -4,7 +4,7 @@
 GET_UP_WAIT_TIME_SECONDS = 10  # 5 * 60
 
 # Url of the spreadsheet to use for time tracking.
-GOOGLE_SHEETS_URL = "https://docs.google.com/spreadsheets/d/1p9o2ctk8ZP_ZUOxhfR3N8M1J_KmRyLIveUCW6bJQ8bU/edit#gid=0"
+GOOGLE_SHEETS_URL = "https://docs.google.com/spreadsheets/d/16l3EC1U9DjG4E175TGkW7S8ePKegrRUNsSqe2_XLmEA"
 
 # Timezone of the date sent to the Google Sheet
 TIMEZONE = 'Europe/Helsinki'

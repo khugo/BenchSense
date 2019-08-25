@@ -11,7 +11,9 @@ SITTING_THRESHOLD = 100
 async def sense(on_sit_down, on_get_up):
     GPIO.setmode(GPIO.BCM)
 
+    sitting_down = False
     while True:
+        tick = 0
         # Output low on the pin
         GPIO.setup(INPUT_PIN, GPIO.OUT)
         GPIO.output(INPUT_PIN, GPIO.LOW)
@@ -20,8 +22,6 @@ async def sense(on_sit_down, on_get_up):
         # Change the pin back to input
         GPIO.setup(INPUT_PIN, GPIO.IN)
 
-        tick = 0
-        sitting_down = False
         # Count up until the pin goes high
         while (GPIO.input(INPUT_PIN) == GPIO.LOW):
             tick += 1
