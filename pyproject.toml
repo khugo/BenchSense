@@ -14,6 +14,7 @@ pytz = "^2019.2"
 
 [tool.poetry.dev-dependencies]
 pytest = "^3.0"
+autopep8 = "^1.4"
 
 [tool.poetry.scripts]
 start = "bench_sense:main"

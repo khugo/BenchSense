@@ -7,6 +7,7 @@ from bench_sense.logger import logger
 INPUT_PIN = 4
 SITTING_THRESHOLD = 100
 
+
 async def sense(on_sit_down, on_get_up):
     GPIO.setmode(GPIO.BCM)
 
@@ -27,9 +28,11 @@ async def sense(on_sit_down, on_get_up):
             tick += 1
             await asyncio.sleep(0.01)
             threshold = config.GET_UP_WAIT_TIME_SECONDS * 100
-            # If it's been long enough since the pin has gone high, we are not sitting
+            # If it's been long enough since the pin has gone high, we are not
+            # sitting
             if tick >= threshold and sitting_down:
-                logger.info("Time since last pressure exceeded threshold, user is not sitting anymore")
+                logger.info(
+                    "Time since last pressure exceeded threshold, user is not sitting anymore")
                 asyncio.create_task(on_get_up())
                 sitting_down = False
         # If it took short enough of a time for the pin to go high, we are applying enough pressure to count
@@ -43,4 +46,3 @@ async def sense(on_sit_down, on_get_up):
 def cleanup():
     logger.info("Cleaning up GPIO")
     GPIO.cleanup()
-

@@ -37,6 +37,6 @@ async def insert_row(date, event):
 
 
 def get_creds():
-    return ServiceAccountCredentials.from_json_keyfile_name("credentials.json",
-      ["https://spreadsheets.google.com/feeds",
-      "https://www.googleapis.com/auth/spreadsheets"])
+    return ServiceAccountCredentials.from_json_keyfile_name(
+        "credentials.json", [
+            "https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/spreadsheets"])
