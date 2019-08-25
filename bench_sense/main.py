@@ -1,18 +1,18 @@
-from sensor import sense, cleanup
 import asyncio
 
-from logger import logger
-from tracking import start_session, end_session
+from bench_sense.sensor import sense, cleanup
+from bench_sense.logger import logger
+from bench_sense.tracking import start_session, end_session
 
 
-async def main():
+def main():
     logger.info("Starting to sense the bench")
-    await sense(start_session, end_session)
+    try:
+        asyncio.run(sense(start_session, end_session))
+    except KeyboardInterrupt:
+        logger.info("Interrupted, exiting")
+    finally:
+        cleanup()
 
-
-try:
-    asyncio.run(main())
-except KeyboardInterrupt:
-    logger.info("Interrupted, exiting")
-finally:
-    cleanup()
+if __name__ == '__main__' :
+    main()

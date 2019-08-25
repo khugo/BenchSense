@@ -4,8 +4,8 @@ import datetime
 import pytz
 from oauth2client.service_account import ServiceAccountCredentials
 
-import config
-from logger import logger
+import bench_sense.config as config
+from bench_sense.logger import logger
 
 
 async def start_session():
