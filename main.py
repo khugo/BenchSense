@@ -1,8 +1,8 @@
-from sensor import sense, cleanup
 import asyncio
 
-from logger import logger
-from tracking import start_session, end_session
+from bench_sense.sensor import sense, cleanup
+from bench_sense.logger import logger
+from bench_sense.tracking import start_session, end_session
 
 
 async def main():
