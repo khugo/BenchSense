@@ -30,6 +30,8 @@ start and end times to the Google Sheet defined in `bench_sense/config.py`.
 
 ### Google Sheets
 
-To run the script, you need API access to Google Drive and Google Sheets. Generate credentials to those and put the credentials JSON file that you got to the root of this folder with a file name of `credentials.json`. See this [article](https://medium.com/datadriveninvestor/use-google-sheets-as-your-database-using-python-77d40009860f) for instructions.
+To run the script, you need API access to Google Drive and Google Sheets. Generate credentials to those and put the credentials JSON file that you got to the root of this folder with a file name of `credentials.json`.
 
 Then you need to create a sheet and give access to that for the credentials you just created. Find the email from `credentials.json` and invite that email to edit the sheet from the normal sharing UI.
+
+See this [article](https://medium.com/datadriveninvestor/use-google-sheets-as-your-database-using-python-77d40009860f) for more detailed instructions.
